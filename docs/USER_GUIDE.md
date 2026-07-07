@@ -25,8 +25,9 @@ To register a prospective student, configure their course, and process an initia
     *   Input the **Transaction Date**. Click **Next**.
 6.  **Step 4: Review Submission**
     *   Audit the summarized card values for accuracy.
-    *   Click **Register & Submit Application**.
     *   A unique Student ID (e.g. `SAMS-2026-0001`) will be automatically stamped.
+
+![Admissions Registry Wizard LWC](../screenshots/17-application-wizard.png)
 
 ---
 
@@ -45,6 +46,8 @@ To view transaction history or record new tuition payments for an active applica
     *   Input the **Amount**, **Payment Method**, and **Payment Date**.
     *   Click **Post Payment**.
     *   The transaction is immediately posted to the **Transaction History** ledger.
+
+![Payment Management component](../screenshots/19-payment-management.png)
 
 ---
 
@@ -65,3 +68,7 @@ Admissions Managers can run evaluations and approve records by doing the followi
     > If the student has an outstanding balance, the system will prevent approvals and throw a validation error. Ensure payments are logged to clear the balance.
 5.  Submit the record to the approval process or toggle the status field to **Approved**.
 6.  Upon saving, the linked Student profile changes to `Active` and an automated email notification is dispatched.
+
+![Application Record Detail with Einstein AI and Verification panels](../screenshots/06-application-record.png)
+
+![Document Upload Checklist component](../screenshots/18-document-upload.png)

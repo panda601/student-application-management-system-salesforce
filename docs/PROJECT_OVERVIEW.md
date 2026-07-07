@@ -20,3 +20,10 @@ SAMS automates these processes by providing a unified workspace:
 *   **Reduced Processing Time**: Cut application-to-approval turnaround times from weeks to minutes.
 *   **Enhanced Revenue Compliance**: Prevented premature approvals, ensuring 100% tuition deposit compliance.
 *   **Increased Visibility**: Real-time dashboards provide managers with total pipeline revenue, status splits, and outstanding balances.
+
+## Key Visuals
+
+Here are some key visual interfaces captured from the live production org:
+- **System Home Dashboard**: [SAMS Home Dashboard](../screenshots/01-home-dashboard.png)
+- **Executive Analytics Dashboard**: [Admissions Executive Dashboard](../screenshots/14-admission-executive-dashboard.png)
+- **Comprehensive Applicant Record Detail**: [Student Application Detail Page](../screenshots/06-application-record.png)

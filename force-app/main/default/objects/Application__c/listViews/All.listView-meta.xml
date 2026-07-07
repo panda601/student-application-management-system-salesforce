@@ -4,7 +4,6 @@
     <columns>NAME</columns>
     <columns>RECORDTYPE</columns>
     <columns>Status__c</columns>
-    <columns>Freelancer__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

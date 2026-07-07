@@ -71,42 +71,42 @@ student-application-management-system/
 │   ├── PROJECT_OVERVIEW.md
 │   ├── SYSTEM_ARCHITECTURE.md
 │   └── DATABASE_SCHEMA.md
-├── screenshots/               # High-res UI mockups & SVGs
+├── screenshots/               # High-res production screenshots captured from Salesforce
 ├── diagrams/                  # Mermaid diagram source code
 ├── force-app/                 # Salesforce source metadata
-└── scripts/                   # Apex anonymous scripts
+├── scripts/                   # Apex anonymous scripts
 ```
 
 For a full list of objects and fields, check the [Database Schema Guide](docs/DATABASE_SCHEMA.md).
 
 ---
 
-## 🖼️ UI Component Showcases (Mockups)
+## 🖼️ UI Component Showcases (Live Screenshots)
 
 ### 1. SAMS Executive Dashboard & Analytics Console
 Shows visual application status distributions and key KPI performance tiles.
-![SAMS Executive Dashboard](screenshots/executive_dashboard_mockup.svg)
+![SAMS Executive Dashboard](screenshots/14-admission-executive-dashboard.png)
 
 ### 2. Admissions Registry Wizard LWC
 Enables staff and applicants to complete student, program, and payment setup in one form.
-![Registry Wizard LWC](screenshots/registration_wizard_mockup.svg)
+![Registry Wizard LWC](screenshots/17-application-wizard.png)
 
 ### 3. Payment Management Panel
 Provides real-time balance metrics and logged transaction lists.
-![Payment Management Panel](screenshots/payment_management_mockup.svg)
+![Payment Management Panel](screenshots/19-payment-management.png)
 
 ### 4. Document Verification Checklist
 Checks transcript, passport, and test credentials with direct uploads and previews.
-![Document Checklist Panel](screenshots/document_manager_mockup.svg)
+![Document Checklist Panel](screenshots/18-document-upload.png)
 
 ### 5. SAMS Einstein AI Insights & Scorecard
-Exposes the predictive probability rating, dropout risk, and document checks.
-![Einstein AI Scorecard](screenshots/ai_recommendation_mockup.svg)
+Exposes the predictive probability rating, dropout risk, and document checks on the student application layout.
+![Einstein AI Scorecard](screenshots/06-application-record.png)
 
 ### 6. Mobile Layout
 SAMS is fully responsive and adjusts components seamlessly to mobile screens.
 <p align="center">
-  <img src="screenshots/mobile_ui_mockup.svg" alt="Mobile UI View" width="300"/>
+  <img src="screenshots/22-responsive-mobile.png" alt="Mobile UI View" width="300"/>
 </p>
 
 ---

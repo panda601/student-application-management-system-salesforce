@@ -67,3 +67,9 @@ graph TD
 ### E. Data Layer (Salesforce Database)
 *   Stores data securely in custom objects: `Student__c`, `Application__c`, and `Payment__c`.
 *   Enforces field-level validation rules and calculates roll-ups.
+
+## 3. Architecture Visualizations
+
+The following live screenshots demonstrate these architectural patterns in execution:
+- **Presentation Layer LWC Components**: The custom wizard, payment, tracker, and upload components are embedded directly inside the Student Application record details view: [SAMS Presentation Layer](../screenshots/06-application-record.png).
+- **System Orchestration & Metric Consoles**: The high-level home screen orchestrates the flow of data across services: [SAMS Dashboard Console](../screenshots/01-home-dashboard.png).

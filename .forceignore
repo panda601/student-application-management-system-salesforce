@@ -12,3 +12,4 @@ package.xml
 **/__tests__/**
 
 # Temporary deploy ignore
+force-app/main/default/profiles/Admin.profile-meta.xml
