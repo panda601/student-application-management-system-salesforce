@@ -1,0 +1,37 @@
+classDiagram
+    class SAMS_BaseService {
+        <<Abstract>>
+        +String serviceName
+        +SAMS_BaseService(String serviceName)
+        +logActivity(String message)*
+        +logError(Exception ex)
+    }
+
+    class StudentService {
+        +generateStudentCodes(List~Student__c~ newStudents)
+        +checkDuplicateEmails(List~Student__c~ newStudents)
+        +logActivity(String message)
+    }
+
+    class ApplicationService {
+        +validateApprovals(List~Application__c~ apps, Map~Id, Application__c~ oldMap)
+        +updateStudentStatusOnApproval(List~Application__c~ apps, Map~Id, Application__c~ oldMap)
+        +logActivity(String message)
+    }
+
+    class PaymentService {
+        +processPaymentAlerts(List~Payment__c~ payments)
+        +logActivity(String message)
+    }
+
+    class NotificationService {
+        +sendEmailNotification(String toAddress, String subject, String body)
+        +sendPaymentSuccessEmails(List~Payment__c~ payments)
+        +sendPaymentFailureEmails(List~Payment__c~ payments)
+        +logActivity(String message)
+    }
+
+    SAMS_BaseService <|-- StudentService
+    SAMS_BaseService <|-- ApplicationService
+    SAMS_BaseService <|-- PaymentService
+    SAMS_BaseService <|-- NotificationService

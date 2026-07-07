@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_Budget</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Application</compactLayoutAssignment>
+    <label>Fixed_Budget</label>
+    <picklistValues>
+        <picklist>Course__c</picklist>
+        <values>
+            <fullName>Business Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Science</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Data Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical Engineering</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Intake__c</picklist>
+        <values>
+            <fullName>Fall 2026</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Spring 2027</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer 2027</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

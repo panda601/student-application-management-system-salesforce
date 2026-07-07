@@ -1,0 +1,36 @@
+graph TD
+    subgraph Presentation Layer
+        UI1[samsApplicationWizard LWC]
+        UI2[samsPaymentManagement LWC]
+        UI3[samsApplicationTimeline LWC]
+        UI4[samsDocumentManager LWC]
+        UI5[samsAiRecommendation LWC]
+    end
+
+    subgraph Controller Layer
+        Controller[SamsDashboardController Apex]
+    end
+
+    subgraph Service & Handler Layer
+        StudentSrv[StudentService Apex]
+        AppSrv[ApplicationService Apex]
+        PaySrv[PaymentService Apex]
+        NotifSrv[NotificationService Apex]
+        AppHandler[ApplicationTriggerHandler Apex]
+        PayHandler[PaymentTriggerHandler Apex]
+    end
+
+    subgraph Automations Layer
+        Flows[Record-Triggered & Screen Flows]
+        Approval[Approval Processes]
+    end
+
+    subgraph Data Layer
+        DB[(Salesforce Custom Objects)]
+    end
+
+    Presentation Layer --> Controller Layer
+    Controller Layer --> Service & Handler Layer
+    Service & Handler Layer --> Automations Layer
+    Automations Layer --> Data Layer
+    Service & Handler Layer --> Data Layer

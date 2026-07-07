@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="500" rx="10" fill="#0b0f19" stroke="#1f2937" stroke-width="2" />
+  
+  <!-- Top Bar -->
+  <rect width="800" height="60" rx="10" fill="#111827" />
+  <text x="30" y="38" font-family="'Inter', sans-serif" font-size="18" font-weight="700" fill="#38bdf8">SAMS Portal</text>
+  <text x="770" y="36" font-family="'Inter', sans-serif" font-size="13" fill="#94a3b8" text-anchor="end">Sarah Jenkins (SAMS-2026-0001)</text>
+
+  <!-- Welcome Card -->
+  <rect x="30" y="80" width="740" height="100" rx="8" fill="#1f2937" opacity="0.4" />
+  <text x="50" y="125" font-family="'Inter', sans-serif" font-size="20" font-weight="700" fill="#ffffff">Welcome back, Sarah!</text>
+  <text x="50" y="150" font-family="'Inter', sans-serif" font-size="13" fill="#94a3b8">Track your application, process tuition deposits, and upload missing checklist documents.</text>
+
+  <!-- Main Grid -->
+  <!-- Left Side: Application Summary & Progress -->
+  <g transform="translate(30, 200)">
+    <rect width="350" height="270" rx="8" fill="#111827" stroke="#1f2937" />
+    <text x="20" y="35" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Application Details</text>
+    
+    <text x="20" y="80" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8">Applied Course:</text>
+    <text x="330" y="80" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="end">Computer Science</text>
+    
+    <text x="20" y="120" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8">Intake Term:</text>
+    <text x="330" y="120" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="end">Fall 2026</text>
+
+    <text x="20" y="160" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8">Application Status:</text>
+    <rect x="250" y="145" width="80" height="22" rx="11" fill="#78350f" />
+    <text x="290" y="160" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#f59e0b" text-anchor="middle">In Review</text>
+
+    <text x="20" y="210" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8">Tuition Fee Paid Progress:</text>
+    <!-- Progress Bar -->
+    <rect x="20" y="230" width="310" height="12" rx="6" fill="#1f2937" />
+    <rect x="20" y="230" width="230" height="12" rx="6" fill="#10b981" />
+    <text x="330" y="222" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="end">75%</text>
+  </g>
+
+  <!-- Right Side: Action Checklist -->
+  <g transform="translate(410, 200)">
+    <rect width="360" height="270" rx="8" fill="#111827" stroke="#1f2937" />
+    <text x="20" y="35" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Admissions Checklist</text>
+    
+    <!-- Item 1 -->
+    <circle cx="35" cy="80" r="10" fill="#064e3b" />
+    <text x="35" y="84" font-family="'Inter', sans-serif" font-size="11" fill="#34d399" text-anchor="middle">✓</text>
+    <text x="60" y="77" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#ffffff">Academic Transcripts</text>
+    <text x="60" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Verified by admissions officer</text>
+
+    <!-- Item 2 -->
+    <circle cx="35" cy="140" r="10" fill="#78350f" />
+    <text x="35" y="144" font-family="'Inter', sans-serif" font-size="11" fill="#fbbf24" text-anchor="middle">⏳</text>
+    <text x="60" y="137" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#ffffff">Passport Copy</text>
+    <text x="60" y="153" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Pending audit checks</text>
+
+    <!-- Item 3 -->
+    <circle cx="35" cy="200" r="10" fill="#7f1d1d" />
+    <text x="35" y="204" font-family="'Inter', sans-serif" font-size="11" fill="#f87171" text-anchor="middle">✗</text>
+    <text x="60" y="197" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#ffffff">English Proficiency Proof</text>
+    <text x="60" y="213" font-family="'Inter', sans-serif" font-size="11" fill="#ef4444">Missing - Action required</text>
+  </g>
+</svg>

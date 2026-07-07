@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Progress__c</fullName>
+    <description>Percentage of course fee paid so far</description>
+    <formula>IF(Course_Fee__c &gt; 0, BLANKVALUE(Total_Payments__c, 0) / Course_Fee__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculated percentage of course fee paid</inlineHelpText>
+    <label>Application Progress</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

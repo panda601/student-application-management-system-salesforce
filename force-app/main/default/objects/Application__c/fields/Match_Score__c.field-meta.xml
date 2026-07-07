@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (
+  OR (
+    AND (
+      ISPICKVAL (Project__r.Skills__c, &quot;Salesforce&quot;),
+      INCLUDES (Freelancer__r.Skills__c, &quot;Salesforce&quot;)
+    ),
+    AND (
+      ISPICKVAL (Project__r.Skills__c, &quot;Java&quot;),
+      INCLUDES (Freelancer__r.Skills__c, &quot;Java&quot;)
+    ),
+    AND (
+      ISPICKVAL (Project__r.Skills__c, &quot;Python&quot;),
+      INCLUDES (Freelancer__r.Skills__c, &quot;Python&quot;)
+    ),
+    AND (
+      ISPICKVAL (Project__r.Skills__c, &quot;React&quot;),
+      INCLUDES (Freelancer__r.Skills__c, &quot;React&quot;)
+    )
+  ),
+  50,
+  0
+) + IF (Freelancer__r.Experience__c &gt;= Project__r.Experience__c, 50, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Match Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,2 @@
+Amount__c,Payment_Date__c,Payment_Method__c,Payment_Status__c,Application__r.Name
+1000.00,2026-06-03,Credit Card,Completed,Bob Business Application

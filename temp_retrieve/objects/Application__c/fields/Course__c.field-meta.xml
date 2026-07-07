@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course__c</fullName>
+    <description>The course of study the student is applying for</description>
+    <inlineHelpText>Select the applied course</inlineHelpText>
+    <label>Course</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Computer Science</fullName>
+                <default>true</default>
+                <label>Computer Science</label>
+            </value>
+            <value>
+                <fullName>Business Administration</fullName>
+                <default>false</default>
+                <label>Business Administration</label>
+            </value>
+            <value>
+                <fullName>Data Science</fullName>
+                <default>false</default>
+                <label>Data Science</label>
+            </value>
+            <value>
+                <fullName>Mechanical Engineering</fullName>
+                <default>false</default>
+                <label>Mechanical Engineering</label>
+            </value>
+            <value>
+                <fullName>Electrical Engineering</fullName>
+                <default>false</default>
+                <label>Electrical Engineering</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

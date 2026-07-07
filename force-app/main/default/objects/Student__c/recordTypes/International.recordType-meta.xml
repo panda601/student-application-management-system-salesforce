@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International</fullName>
+    <active>true</active>
+    <description>Record type for international students requiring visa and passport tracking.</description>
+    <label>International</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspended</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Student_Type__c</picklist>
+        <values>
+            <fullName>International</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

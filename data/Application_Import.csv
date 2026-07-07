@@ -1,0 +1,5 @@
+Student__r.Student_ID__c,Course__c,Intake__c,Status__c,Course_Fee__c,Application_Date__c
+SAMS-2026-0001,Computer Science,Fall 2026,New,10000.00,2026-06-01
+SAMS-2026-0002,Data Science,Fall 2026,In Review,12000.00,2026-05-20
+SAMS-2026-0003,Business Administration,Spring 2027,New,9000.00,2026-06-03
+SAMS-2026-0004,Mechanical Engineering,Fall 2026,Approved,11000.00,2026-05-15

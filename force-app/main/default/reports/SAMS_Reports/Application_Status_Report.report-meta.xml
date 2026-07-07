@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAMS_Reports/Application_Status_Report</fullName>
+    <format>Tabular</format>
+    <name>Application Status Report</name>
+    <reportType>SAMS_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <description>Placeholder Application Status report</description>
+</Report>

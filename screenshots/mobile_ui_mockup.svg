@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="100%" height="100%">
+  <!-- Phone Outer Frame -->
+  <rect width="360" height="640" rx="36" fill="#0f172a" stroke="#334155" stroke-width="8" />
+  
+  <!-- Camera Notch -->
+  <rect x="110" y="8" width="140" height="20" rx="10" fill="#020617" />
+  
+  <!-- Screen Area -->
+  <!-- Top Header -->
+  <rect x="8" y="32" width="344" height="50" fill="#1e293b" />
+  <text x="30" y="63" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#ffffff">SAMS Console</text>
+  <!-- Menu Burger -->
+  <line x1="310" y1="52" x2="330" y2="52" stroke="#ffffff" stroke-width="2" />
+  <line x1="310" y1="57" x2="330" y2="57" stroke="#ffffff" stroke-width="2" />
+  <line x1="310" y1="62" x2="330" y2="62" stroke="#ffffff" stroke-width="2" />
+
+  <!-- Main Body Content (Scrolling layout simulated) -->
+  <!-- Student Quick Card -->
+  <g transform="translate(20, 100)">
+    <rect width="320" height="130" rx="8" fill="#1e293b" stroke="#334155" />
+    <text x="15" y="25" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#38bdf8">APPLICANT DETAILS</text>
+    <text x="15" y="55" font-family="'Outfit', 'Inter', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Sarah Jenkins</text>
+    <text x="15" y="75" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">s.jenkins@example.com</text>
+    
+    <rect x="15" y="90" width="110" height="24" rx="12" fill="#064e3b" />
+    <text x="70" y="106" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">SAMS-2026-0001</text>
+  </g>
+
+  <!-- Progress Stepper -->
+  <g transform="translate(20, 250)">
+    <rect width="320" height="150" rx="8" fill="#1e293b" stroke="#334155" />
+    <text x="15" y="25" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#a855f7">APPLICATION TIMELINE</text>
+    
+    <!-- Step 1 -->
+    <circle cx="25" cy="55" r="8" fill="#10b981" />
+    <text x="45" y="59" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#ffffff">1. Registered</text>
+    
+    <!-- Step 2 -->
+    <line x1="25" y1="63" x2="25" y2="87" stroke="#10b981" stroke-width="2" />
+    <circle cx="25" cy="95" r="8" fill="#10b981" />
+    <text x="45" y="99" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#ffffff">2. Deposit Received</text>
+
+    <!-- Step 3 -->
+    <line x1="25" y1="103" x2="25" y2="127" stroke="#3b82f6" stroke-width="2" />
+    <circle cx="25" cy="135" r="8" fill="#3b82f6" />
+    <text x="45" y="139" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#ffffff">3. Under Review</text>
+  </g>
+
+  <!-- AI score quick summary -->
+  <g transform="translate(20, 420)">
+    <rect width="320" height="100" rx="8" fill="#1e293b" stroke="#334155" />
+    <text x="15" y="25" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#f59e0b">EINSTEIN SCORE</text>
+    <text x="15" y="55" font-family="'Outfit', 'Inter', sans-serif" font-size="24" font-weight="800" fill="#10b981">85%</text>
+    <text x="15" y="80" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">Admissions Likelihood: High</text>
+  </g>
+</svg>

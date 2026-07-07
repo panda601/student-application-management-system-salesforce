@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>SAMS Manager</label>
+    <description>Full access to SAMS custom objects and fields for Student Application Management System administrators/managers.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    
+    <!-- Object Permissions -->
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Application__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Payment__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Project__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Student__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+
+    <!-- Field Permissions - Student__c -->
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Student__c.Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Student__c.Age__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Student__c.Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Student__c.Student_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Field Permissions - Application__c -->
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Application_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+
+
+
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Approval_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Total_Payments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Payment_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Outstanding_Balance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Application_Progress__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Approval_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Field Permissions - Payment__c -->
+
+
+
+
+
+    <!-- Tab Settings -->
+    <tabSettings>
+        <tab>Student__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Application__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Payment__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+
+    <!-- Record Type Visibilities -->
+    <recordTypeVisibilities>
+        <recordType>Student__c.Domestic</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Student__c.International</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Application__c.Undergraduate</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Application__c.Postgraduate</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

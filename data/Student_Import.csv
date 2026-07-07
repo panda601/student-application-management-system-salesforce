@@ -1,0 +1,6 @@
+Name,Email__c,Phone__c,Date_of_Birth__c,Student_Type__c,Country__c,Address__c,Status__c
+Alice Smith,alice.smith@example.com,555-0199,2002-05-15,Domestic,United States,"123 Main St, New York, NY",Active
+Bob Jones,bob.jones@example.com,555-0188,2001-09-22,Domestic,United States,"456 Oak Ave, Boston, MA",Active
+Carlos Rodriguez,carlos.r@example.com,555-0177,2000-02-10,International,Mexico,"Paseo de la Reforma 45, CDMX",Active
+Diana Chen,diana.chen@example.com,555-0166,2003-11-30,International,Canada,"789 Maple Rd, Vancouver, BC",Active
+Ethan Hunt,ethan.hunt@example.com,555-0155,1999-07-04,Domestic,United States,"101 Pine Dr, Seattle, WA",Suspended

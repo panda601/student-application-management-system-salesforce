@@ -1,0 +1,72 @@
+graph TD
+    %% Custom UI Components (LWC)
+    subgraph UI [Lightning Web Components]
+        samsAnalytics[samsAnalyticsDashboard]
+        samsTimeline[samsApplicationTimeline]
+        samsWizard[samsApplicationWizard]
+        samsDocMgr[samsDocumentManager]
+        samsPayMgr[samsPaymentManagement]
+        samsStudDash[samsStudentDashboard]
+        samsAiRec[samsAiRecommendation]
+    end
+
+    %% Apex Controller and Service Layer
+    subgraph Apex [Apex Layer]
+        Controller[SAMS_Controller / SamsDashboardController]
+        BaseService[SAMS_BaseService]
+        StudentService[StudentService]
+        AppService[ApplicationService]
+        PayService[PaymentService]
+        ApprService[ApprovalService]
+        NotifService[NotificationService]
+    end
+
+    %% Database / Objects
+    subgraph DB [Salesforce Database]
+        Student__c[(Student__c)]
+        Application__c[(Application__c)]
+        Payment__c[(Payment__c)]
+    end
+
+    %% Automations & Triggers
+    subgraph Automation [Automations & Triggers]
+        StudentTrigger[StudentTrigger]
+        AppTrigger[ApplicationTrigger]
+        PayTrigger[PaymentTrigger]
+        Flows[Record-Triggered & Screen Flows]
+        ApprovalProcess[Approval Processes]
+    end
+
+    %% Wiring / Relationships
+    samsAnalytics --> Controller
+    samsTimeline --> Controller
+    samsWizard --> Controller
+    samsDocMgr --> Controller
+    samsPayMgr --> Controller
+    samsStudDash --> Controller
+    samsAiRec --> Controller
+
+    Controller --> StudentService
+    Controller --> AppService
+    Controller --> PayService
+    Controller --> ApprService
+    Controller --> NotifService
+
+    StudentService --> BaseService
+    AppService --> BaseService
+    PayService --> BaseService
+    ApprService --> BaseService
+    NotifService --> BaseService
+
+    StudentTrigger --> StudentService
+    AppTrigger --> AppService
+    PayTrigger --> PayService
+
+    StudentTrigger -.-> DB
+    AppTrigger -.-> DB
+    PayTrigger -.-> DB
+    Flows -.-> DB
+    ApprovalProcess -.-> DB
+
+    Student__c ||--o{ Application__c : "1:N Relationship"
+    Application__c ||--|{ Payment__c : "1:N Relationship"

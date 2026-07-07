@@ -1,0 +1,21 @@
+sequenceDiagram
+    autonumber
+    actor Student
+    actor Staff
+    actor Manager
+    participant Wizard as samsApplicationWizard LWC
+    participant Controller as SamsDashboardController
+    participant Database as Salesforce Database
+
+    Student->>Wizard: Complete steps & submit
+    Wizard->>Controller: createQuickEnrollment(data)
+    Note over Controller: Begins Database Transaction
+    Controller->>Database: Insert Student__c record
+    Note over Database: Generates Student ID (SAMS-YYYY-XXXX)
+    Controller->>Database: Insert Application__c record
+    Controller->>Database: Insert initial Payment__c record
+    Note over Controller: Commits Transaction on success
+    Controller-->>Wizard: Return success response
+    Wizard-->>Student: Display Success Toast
+    Note over Database: Record-Triggered Flows fire
+    Database-->>Student: Send registration confirmation email

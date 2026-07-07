@@ -1,0 +1,10 @@
+graph TD
+    A[Manager triggers Approval Process] --> B{Is Outstanding Balance > 0?}
+    B -- Yes --> C[Trigger Validation Rule blocks approval]
+    C --> D[Add error: Cannot approve application with outstanding balance]
+    B -- No --> E[Approve application]
+    E --> F[Status set to Approved]
+    F --> G[Trigger: ApplicationService.updateStudentStatusOnApproval]
+    G --> H[Update linked Student.Status to Active]
+    F --> I[Trigger: ApplicationTriggerHandler.sendApprovalEmails]
+    I --> J[Dispatch notification email via NotificationService]

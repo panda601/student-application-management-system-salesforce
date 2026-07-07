@@ -1,0 +1,113 @@
+.card-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e4e8;
+    background-color: white;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a202c;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 6px;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 24px 0;
+    margin-top: 12px;
+}
+
+.timeline-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-step {
+    width: 22%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: 2px solid #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.step-label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #2d3748;
+    margin-top: 8px;
+}
+
+.step-detail {
+    font-size: 11px;
+    color: #718096;
+    margin-top: 2px;
+}
+
+/* Step States */
+.step-completed .step-circle {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #2563eb;
+}
+
+.step-completed-success .step-circle {
+    background-color: #10b981;
+    color: white;
+    border-color: #059669;
+}
+
+.step-completed-error .step-circle {
+    background-color: #ef4444;
+    color: white;
+    border-color: #dc2626;
+}
+
+.step-active .step-circle {
+    background-color: #ffb74d;
+    color: white;
+    border-color: #ea580c;
+    box-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Connection Line */
+.connection-line {
+    position: absolute;
+    top: 40px;
+    left: 11%;
+    width: 78%;
+    height: 4px;
+    background-color: #e2e8f0;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.connection-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}

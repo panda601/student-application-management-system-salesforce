@@ -1,0 +1,59 @@
+.card-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e1e4e8;
+    background-color: white;
+}
+
+.header-container {
+    background: linear-gradient(135deg, #0d387a 0%, #1a5bbb 100%);
+    color: white;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+.step-body {
+    background-color: #fafbfc;
+    min-height: 380px;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f1e36;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 8px;
+}
+
+.review-grid {
+    margin-top: 12px;
+}
+
+.review-section {
+    margin-bottom: 16px;
+}
+
+.review-header {
+    background-color: #ebf3fe;
+    color: #0d387a;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.footer-bar {
+    background-color: #f7f9fb;
+}

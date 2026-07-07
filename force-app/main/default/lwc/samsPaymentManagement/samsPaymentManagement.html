@@ -1,0 +1,89 @@
+<template>
+    <div class="slds-card sld-theme_default card-container">
+        <!-- Header -->
+        <div class="header-container slds-p-around_medium">
+            <h1 class="header-title">Payment Management</h1>
+            <p class="header-subtitle">Track payments, outstanding balance, and transaction history for this application.</p>
+        </div>
+
+        <!-- Balance Metrics (KPI Tiles) -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="kpi-tile kpi-blue">
+                        <div class="kpi-label">Course Fee</div>
+                        <div class="kpi-value">${courseFee}</div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="kpi-tile kpi-green">
+                        <div class="kpi-label">Paid Amount</div>
+                        <div class="kpi-value">${totalPaid}</div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="kpi-tile kpi-red">
+                        <div class="kpi-label">Outstanding Balance</div>
+                        <div class="kpi-value">${outstandingBalance}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two column layout: Record Payment vs Payment History -->
+        <div class="slds-grid slds-wrap slds-p-around_medium body-grid">
+            
+            <!-- Left Side: Record New Payment Form -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-p-right_medium form-panel">
+                <h2 class="section-title slds-m-bottom_small">Record New Deposit</h2>
+                <div class="slds-form slds-form_stacked">
+                    <lightning-input type="number" formatter="currency" label="Amount" value={paymentAmount} onchange={handleAmountChange} required class="validate-payment"></lightning-input>
+                    <lightning-combobox label="Payment Method" value={paymentMethod} options={paymentMethodOptions} onchange={handleMethodChange} required class="validate-payment"></lightning-combobox>
+                    <lightning-input type="date" label="Payment Date" value={paymentDate} onchange={handleDateChange} required class="validate-payment"></lightning-input>
+                    
+                    <div class="slds-m-top_medium">
+                        <lightning-button label="Post Payment" onclick={handlePostPayment} variant="brand" icon-name="utility:add" class="slds-stretch" loading={isPosting}></lightning-button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: History Table -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_7-of-12 list-panel">
+                <h2 class="section-title slds-m-bottom_small">Transaction History</h2>
+                <template if:true={payments}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered modern-table">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate" title="Reference">Ref</div></th>
+                                <th scope="col"><div class="slds-truncate" title="Amount">Amount</div></th>
+                                <th scope="col"><div class="slds-truncate" title="Method">Method</div></th>
+                                <th scope="col"><div class="slds-truncate" title="Date">Date</div></th>
+                                <th scope="col"><div class="slds-truncate" title="Status">Status</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={payments} for:item="pay">
+                                <tr key={pay.Id} class="slds-hint-parent">
+                                    <td><div class="slds-truncate">{pay.Name}</div></td>
+                                    <td><div class="slds-truncate"><b>${pay.Amount__c}</b></div></td>
+                                    <td><div class="slds-truncate">{pay.Payment_Method__c}</div></td>
+                                    <td><div class="slds-truncate">{pay.FormattedDate}</div></td>
+                                    <td>
+                                        <span class={pay.StatusClass}>{pay.Payment_Status__c}</span>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                    <template if:false={payments.length}>
+                        <div class="slds-align_absolute-center slds-p-around_large text-muted">No payments recorded for this application.</div>
+                    </template>
+                </template>
+                <template if:false={payments}>
+                    <lightning-spinner alternative-text="Loading history..." size="small"></lightning-spinner>
+                </template>
+            </div>
+
+        </div>
+    </div>
+</template>

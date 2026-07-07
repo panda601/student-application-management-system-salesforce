@@ -1,0 +1,149 @@
+.card-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e1e4e8;
+}
+
+.header-container {
+    background: linear-gradient(135deg, #1b498f 0%, #3074d3 100%);
+    color: white;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+.search-bar {
+    background-color: #f7f9fb;
+}
+
+.main-grid {
+    min-height: 550px;
+}
+
+.list-panel {
+    background-color: #ffffff;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.list-scroll {
+    padding: 8px 0;
+}
+
+.student-item {
+    cursor: pointer;
+    border-bottom: 1px solid #f2f4f7;
+    transition: all 0.2s ease-in-out;
+}
+
+.student-item:hover {
+    background-color: #f4f6fa;
+}
+
+.student-selected {
+    background-color: #e8f0fe !important;
+    border-left: 4px solid #1b498f;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #1b2a4a;
+    font-size: 14px;
+}
+
+.student-meta {
+    font-size: 12px;
+    color: #5a6b8c;
+    margin-top: 2px;
+}
+
+.detail-panel {
+    background-color: #fafbfc;
+    min-height: 550px;
+}
+
+.selected-student-header {
+    border-bottom: 2px solid #e2e6ea;
+    padding-bottom: 12px;
+}
+
+.detail-student-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f1e36;
+}
+
+.detail-student-meta {
+    font-size: 13px;
+    color: #4a5568;
+    margin-top: 4px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.app-card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.15s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-course {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1a202c;
+}
+
+.app-meta {
+    font-size: 12px;
+    color: #718096;
+}
+
+.app-balance {
+    font-size: 13px;
+    color: #e53e3e;
+}
+
+.detail-placeholder {
+    height: 100%;
+    color: #718096;
+}
+
+.field-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #718096;
+}
+
+.field-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-top: 2px;
+}
+
+.text-muted {
+    color: #718096;
+    font-style: italic;
+}

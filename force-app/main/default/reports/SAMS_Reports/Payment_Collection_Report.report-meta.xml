@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAMS_Reports/Payment_Collection_Report</fullName>
+    <format>Tabular</format>
+    <name>Payment Collection Report</name>
+    <reportType>SAMS_Payments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <description>Placeholder Payment Collection report</description>
+</Report>

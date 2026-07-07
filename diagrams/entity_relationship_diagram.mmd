@@ -1,0 +1,38 @@
+erDiagram
+    STUDENT ||--o{ APPLICATION : "has"
+    APPLICATION ||--|{ PAYMENT : "collects"
+    
+    STUDENT {
+        String Name "Full Name"
+        String Student_ID__c "Unique Sequenced ID (SAMS-YYYY-XXXX)"
+        String Email__c "Primary Contact Email (Unique)"
+        String Phone__c "Contact Phone"
+        Date Date_of_Birth__c "Birth Date"
+        Number Age__c "Formula (Years)"
+        String Student_Type__c "Domestic / International"
+        String Status__c "Active / Inactive / Suspended"
+        String Country__c "Country of origin"
+        String Address__c "Full residential address"
+    }
+    
+    APPLICATION {
+        String Name "Auto-Number (APP-XXXX)"
+        Lookup Student__c "Lookup to Student__c"
+        String Course__c "Selected Academic Program"
+        String Intake__c "Target Intake Term"
+        Decimal Course_Fee__c "Tuition Cost"
+        String Status__c "New / In Review / Approved / Rejected"
+        String Approval_Status__c "Formula Indicator"
+        Decimal Total_Payments__c "Roll-up Summary (Payments)"
+        Decimal Outstanding_Balance__c "Formula (Fee - Payments)"
+        Percent Application_Progress__c "Formula Indicator"
+    }
+
+    PAYMENT {
+        String Name "Auto-Number (PAY-XXXX)"
+        Lookup Application__c "Lookup to Application__c"
+        Decimal Amount__c "Transaction Value"
+        Date Payment_Date__c "Date Settled"
+        String Payment_Method__c "Credit Card / Bank / PayPal"
+        String Payment_Status__c "Pending / Completed / Failed"
+    }

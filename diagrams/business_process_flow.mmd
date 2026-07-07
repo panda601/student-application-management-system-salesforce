@@ -1,0 +1,18 @@
+graph TD
+    A[Wizard Submission] --> B[Application Created: Status = New]
+    B --> C[Staff Initiates Document Verification]
+    C --> D{All Docs Verified?}
+    D -- No --> E[Status = In Review: Request Missing Files]
+    E --> C
+    D -- Yes --> F[Assess Einstein AI Risk Score]
+    F --> G{Outstanding Balance > 0?}
+    
+    G -- Yes --> H[Block Approval Trigger: Force Payment]
+    H --> I[Post Tuition Payment]
+    I --> G
+    
+    G -- No --> J[Manager Grants Final Approval]
+    J --> K[Update Student Status to Active]
+    K --> L[Send Automated Success Email]
+    
+    E -- Applicant Abandons --> M[Status = Rejected]

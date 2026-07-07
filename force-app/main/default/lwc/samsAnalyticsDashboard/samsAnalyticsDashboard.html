@@ -1,0 +1,151 @@
+<template>
+    <div class="slds-card sld-theme_default card-container">
+        <!-- Dashboard Header -->
+        <div class="header-container slds-p-around_medium">
+            <h1 class="header-title">Executive Analytics &amp; AI Console</h1>
+            <p class="header-subtitle">Real-time metrics, payment distributions, and predictive AI scores.</p>
+        </div>
+
+        <!-- KPI Grid -->
+        <div class="slds-p-around_medium slds-border_bottom kpi-bar">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-bottom_small">
+                    <div class="kpi-card">
+                        <div class="kpi-icon icon-blue">
+                            <lightning-icon icon-name="utility:user" size="small" variant="inverse"></lightning-icon>
+                        </div>
+                        <div class="kpi-data">
+                            <div class="kpi-title">Total Students</div>
+                            <div class="kpi-num">{metrics.totalStudents}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-bottom_small">
+                    <div class="kpi-card">
+                        <div class="kpi-icon icon-purple">
+                            <lightning-icon icon-name="utility:copy" size="small" variant="inverse"></lightning-icon>
+                        </div>
+                        <div class="kpi-data">
+                            <div class="kpi-title">Total Applications</div>
+                            <div class="kpi-num">{metrics.totalApps}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-bottom_small">
+                    <div class="kpi-card">
+                        <div class="kpi-icon icon-green">
+                            <lightning-icon icon-name="utility:check" size="small" variant="inverse"></lightning-icon>
+                        </div>
+                        <div class="kpi-data">
+                            <div class="kpi-title">Approved Apps</div>
+                            <div class="kpi-num">{metrics.approvedApps}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_3-of-12 slds-p-bottom_small">
+                    <div class="kpi-card">
+                        <div class="kpi-icon icon-orange">
+                            <lightning-icon icon-name="utility:moneybag" size="small" variant="inverse"></lightning-icon>
+                        </div>
+                        <div class="kpi-data">
+                            <div class="kpi-title">Revenue Collected</div>
+                            <div class="kpi-num">${formattedRevenue}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts & AI Panel -->
+        <div class="slds-grid slds-wrap slds-p-around_medium body-grid slds-gutters">
+            
+            <!-- Donut Chart: Application Status Distribution -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_medium">
+                <div class="chart-card slds-p-around_medium">
+                    <h2 class="section-title slds-m-bottom_medium">Application Status Breakdown</h2>
+                    <div class="slds-align_absolute-center chart-wrapper">
+                        <!-- SVG Donut Chart -->
+                        <svg width="200" height="200" viewBox="0 0 200 200" class="donut-svg">
+                            <!-- Background Circle -->
+                            <circle cx="100" cy="100" r="70" fill="transparent" stroke="#f0f2f5" stroke-width="20" />
+                            
+                            <!-- Dynamic Circle Segments representing statuses -->
+                            <circle cx="100" cy="100" r="70" fill="transparent" stroke="#3074d3" stroke-width="20" 
+                                    stroke-dasharray="439.8" stroke-dashoffset={chartData.newOffset} transform="rotate(-90, 100, 100)" />
+                            
+                            <circle cx="100" cy="100" r="70" fill="transparent" stroke="#ffb74d" stroke-width="20" 
+                                    stroke-dasharray="439.8" stroke-dashoffset={chartData.reviewOffset} transform="rotate(-90, 100, 100)" />
+                            
+                            <circle cx="100" cy="100" r="70" fill="transparent" stroke="#4caf50" stroke-width="20" 
+                                    stroke-dasharray="439.8" stroke-dashoffset={chartData.approvedOffset} transform="rotate(-90, 100, 100)" />
+                            
+                            <!-- Center Text -->
+                            <text x="100" y="105" text-anchor="middle" font-size="18" font-weight="bold" fill="#2d3748">Statuses</text>
+                        </svg>
+
+                        <!-- Legend -->
+                        <div class="slds-m-left_large legend-list">
+                            <div class="legend-item"><span class="legend-color legend-blue"></span> New ({newPercent}%)</div>
+                            <div class="legend-item"><span class="legend-color legend-yellow"></span> In Review ({reviewPercent}%)</div>
+                            <div class="legend-item"><span class="legend-color legend-green"></span> Approved ({approvedPercent}%)</div>
+                            <div class="legend-item"><span class="legend-color legend-red"></span> Rejected ({rejectedPercent}%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Predictive Recommendation Panel -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_medium">
+                <div class="ai-card slds-p-around_medium">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_medium">
+                        <div class="slds-col">
+                            <h2 class="ai-title">
+                                <lightning-icon icon-name="utility:einstein" size="small" class="ai-icon slds-m-right_x-small"></lightning-icon>
+                                Einstein Admission Assistant
+                            </h2>
+                        </div>
+                        <div class="slds-col slds-no-flex">
+                            <span class="slds-badge ai-badge">AI Predictive Engine</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Insights List -->
+                    <div class="ai-insights">
+                        <!-- Stat 1 -->
+                        <div class="insight-row slds-m-bottom_medium">
+                            <div class="slds-grid slds-grid_align-spread">
+                                <span class="insight-label">Admission/Approval Probability</span>
+                                <span class="insight-value text-green"><b>85% High</b></span>
+                            </div>
+                            <div class="progress-bar-bg slds-m-top_xxx-small">
+                                <div class="progress-bar-fill fill-green" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div class="insight-row slds-m-bottom_medium">
+                            <div class="slds-grid slds-grid_align-spread">
+                                <span class="insight-label">Applicant Drop-out Risk Score</span>
+                                <span class="insight-value text-blue"><b>15% Low</b></span>
+                            </div>
+                            <div class="progress-bar-bg slds-m-top_xxx-small">
+                                <div class="progress-bar-fill fill-blue" style="width: 15%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- missing docs checklist -->
+                        <div class="docs-checklist slds-p-around_small">
+                            <div class="checklist-title slds-m-bottom_xx-small">Einstein Document Checklist</div>
+                            <ul>
+                                <li><lightning-icon icon-name="utility:warning" size="xx-small" class="slds-m-right_xx-small text-orange"></lightning-icon> Missing Official High School Transcript</li>
+                                <li><lightning-icon icon-name="utility:check" size="xx-small" class="slds-m-right_xx-small text-green"></lightning-icon> TOEFL/IELTS English Proficiency Test</li>
+                                <li><lightning-icon icon-name="utility:check" size="xx-small" class="slds-m-right_xx-small text-green"></lightning-icon> Passport Biographical Page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>

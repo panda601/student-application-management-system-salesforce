@@ -1,0 +1,101 @@
+.sams-container {
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.ai-card {
+    background: linear-gradient(135deg, hsl(230, 100%, 98%), hsl(230, 100%, 95%));
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid hsl(230, 60%, 90%);
+}
+
+.gauge-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gauge-ring {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: white;
+    border: 6px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.gauge-ring span {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.gauge-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.insights-section {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+
+.insight-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.lbl {
+    font-weight: 600;
+    color: #64748b;
+}
+
+.risk-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.risk-low {
+    background-color: hsl(140, 80%, 90%);
+    color: hsl(140, 80%, 25%);
+}
+
+.risk-medium {
+    background-color: hsl(35, 80%, 90%);
+    color: hsl(35, 80%, 30%);
+}
+
+.risk-high {
+    background-color: hsl(0, 80%, 90%);
+    color: hsl(0, 80%, 30%);
+}
+
+.doc-item {
+    font-size: 0.85rem;
+    color: #334155;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.all-docs-verified {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.text-green { color: hsl(140, 75%, 35%); }
+.text-orange { color: hsl(35, 75%, 45%); }
+.text-red { color: hsl(0, 75%, 45%); }

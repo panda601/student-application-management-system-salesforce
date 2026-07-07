@@ -1,0 +1,19 @@
+graph LR
+    subgraph Local Environment
+        Code[VS Code Metadata & Source files]
+        CLI[Salesforce CLI sf v2]
+    end
+
+    subgraph Target Salesforce Environments
+        Scratch[Salesforce Scratch Org]
+        Sandbox[Developer Sandbox]
+        Prod[Production Org]
+    end
+
+    Code --> CLI
+    CLI -- sf project deploy start --> Scratch
+    CLI -- sf project deploy start --> Sandbox
+    Sandbox -- Change Sets / DevOps Center --> Prod
+    
+    CLI -- sf data import tree --> Scratch
+    CLI -- sf data import tree --> Sandbox

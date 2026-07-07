@@ -1,0 +1,140 @@
+<template>
+    <div class="slds-card card-container">
+        <!-- Wizard Header -->
+        <div class="header-container slds-p-around_medium">
+            <h1 class="header-title">Admissions Registry Wizard</h1>
+            <p class="header-subtitle">Register students, courses, and initial deposits in one unified transaction.</p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="slds-p-around_medium slds-border_bottom">
+            <lightning-progress-indicator current-step={currentStep} type="path" variant="base">
+                <lightning-progress-step label="Student Info" value="1"></lightning-progress-step>
+                <lightning-progress-step label="Course Config" value="2"></lightning-progress-step>
+                <lightning-progress-step label="Payment Config" value="3"></lightning-progress-step>
+                <lightning-progress-step label="Review &amp; Submit" value="4"></lightning-progress-step>
+            </lightning-progress-indicator>
+        </div>
+
+        <!-- Step Fields (Body) -->
+        <div class="slds-p-around_large step-body">
+            
+            <!-- STEP 1: STUDENT INFO -->
+            <template if:true={isStep1}>
+                <div class="slds-form slds-form_stacked">
+                    <h2 class="step-title slds-m-bottom_medium">Student Information</h2>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input label="Full Name" value={studentData.name} onchange={handleStudentName} required class="validate-step-1"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="email" label="Email Address" value={studentData.email} onchange={handleStudentEmail} required class="validate-step-1"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="tel" label="Phone Number" value={studentData.phone} onchange={handleStudentPhone}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="date" label="Date of Birth" value={studentData.dob} onchange={handleStudentDob} required class="validate-step-1"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-combobox label="Student Classification" value={studentData.type} options={studentTypeOptions} onchange={handleStudentType} required class="validate-step-1"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input label="Country of Origin" value={studentData.country} onchange={handleStudentCountry} required class="validate-step-1"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-textarea label="Residential Address" value={studentData.address} onchange={handleStudentAddress}></lightning-textarea>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- STEP 2: COURSE CONFIG -->
+            <template if:true={isStep2}>
+                <div class="slds-form slds-form_stacked">
+                    <h2 class="step-title slds-m-bottom_medium">Course Configurations</h2>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-combobox label="Applied Program / Course" value={appData.course} options={courseOptions} onchange={handleAppCourse} required class="validate-step-2"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-combobox label="Target Academic Intake" value={appData.intake} options={intakeOptions} onchange={handleAppIntake} required class="validate-step-2"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-combobox label="Application Level (Record Type)" value={appData.level} options={levelOptions} onchange={handleAppLevel} required class="validate-step-2"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="number" formatter="currency" label="Standard Tuition/Course Fee" value={appData.fee} onchange={handleAppFee} required class="validate-step-2"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- STEP 3: PAYMENT CONFIG -->
+            <template if:true={isStep3}>
+                <div class="slds-form slds-form_stacked">
+                    <h2 class="step-title slds-m-bottom_medium">Deposit &amp; Payment configuration</h2>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="number" formatter="currency" label="Initial Deposit Amount" value={payData.amount} onchange={handlePayAmount} required class="validate-step-3"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-combobox label="Payment Gateway Method" value={payData.method} options={paymentMethodOptions} onchange={handlePayMethod} required class="validate-step-3"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-p-bottom_small">
+                            <lightning-input type="date" label="Transaction Date" value={payData.date} onchange={handlePayDate} required class="validate-step-3"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- STEP 4: REVIEW & SUBMIT -->
+            <template if:true={isStep4}>
+                <div class="slds-form">
+                    <h2 class="step-title slds-m-bottom_medium">Review Submission</h2>
+                    <div class="slds-grid slds-wrap slds-gutters review-grid">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 review-section slds-p-bottom_medium">
+                            <div class="review-header">Student Record Details</div>
+                            <div class="slds-p-around_small">
+                                <p><b>Name:</b> {studentData.name}</p>
+                                <p><b>Email:</b> {studentData.email}</p>
+                                <p><b>Type:</b> {studentData.type} | <b>Country:</b> {studentData.country}</p>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 review-section slds-p-bottom_medium">
+                            <div class="review-header">Application &amp; Tuition Configurations</div>
+                            <div class="slds-p-around_small">
+                                <p><b>Course:</b> {appData.course}</p>
+                                <p><b>Intake:</b> {appData.intake} ({appData.level})</p>
+                                <p><b>Tuition Fee:</b> ${appData.fee}</p>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 review-section">
+                            <div class="review-header">Deposit &amp; Payment Terms</div>
+                            <div class="slds-p-around_small">
+                                <p><b>Deposit Amount Paid:</b> ${payData.amount}</p>
+                                <p><b>Payment Gateway:</b> {payData.method} | <b>Transaction Date:</b> {payData.date}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+
+        <!-- Wizard Footer Controls -->
+        <div class="slds-p-around_medium slds-border_top footer-bar slds-grid slds-grid_align-spread">
+            <div>
+                <lightning-button label="Previous" onclick={handlePrevious} disabled={isFirstStep} icon-name="utility:left"></lightning-button>
+            </div>
+            <div>
+                <template if:false={isLastStep}>
+                    <lightning-button label="Next" onclick={handleNext} variant="brand" icon-name="utility:right" icon-position="right"></lightning-button>
+                </template>
+                <template if:true={isLastStep}>
+                    <lightning-button label="Register &amp; Submit Application" onclick={handleSubmit} variant="success" icon-name="utility:check" loading={isLoading}></lightning-button>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

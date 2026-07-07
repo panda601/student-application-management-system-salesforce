@@ -1,0 +1,5 @@
+Application__r.Name,Amount__c,Payment_Date__c,Payment_Status__c,Payment_Method__c
+APP-000001,2500.00,2026-06-02,Completed,Credit Card
+APP-000002,5000.00,2026-05-21,Completed,Bank Transfer
+APP-000002,7000.00,2026-05-22,Completed,Stripe
+APP-000004,11000.00,2026-05-16,Completed,Credit Card

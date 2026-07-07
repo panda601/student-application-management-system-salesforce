@@ -1,0 +1,10 @@
+graph TD
+    A[Post new payment amount, date & method] --> B[Insert Payment record: status = Pending]
+    B --> C{Trigger fires after insert}
+    C --> D[Log Completed Payment Alert]
+    D --> E[Process payment via gateway simulation]
+    E --> F{Is payment Completed or Failed?}
+    F -- Completed --> G[Send success alert email]
+    F -- Failed --> H[Send failure alert email]
+    G --> I[Recalculate Application Total Payments rollup]
+    I --> J[Reduce Application Outstanding Balance]

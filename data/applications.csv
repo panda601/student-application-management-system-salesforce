@@ -1,0 +1,3 @@
+Name,Course__c,Intake__c,Course_Fee__c,Status__c,Student__r.Email__c
+Alice CS Application,Computer Science,Fall 2026,10000,New,alice.smith@example.com
+Bob Business Application,Business Administration,Spring 2027,10000,In Review,bob.jones@example.com
